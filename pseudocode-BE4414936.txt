@@ -1,0 +1,46 @@
+PRINT "selamat datang"
+PRINT "===================="
+
+PRINT "silahkan masukkan username"
+INPUT Username
+
+PRINT "silahkan masukkan password"
+INPUT Password
+
+IF Username != "admin" && Password != "admin"
+    PRINT "username atau password salah" 
+    break
+
+INITIALIZE DaftarTugas ARRAY
+
+START INFINITE LOOP
+    PRINT "masukkan perintah :"
+    PRINT "1. tambah"
+    PRINT "2. tampilkan daftar"
+    PRINT "3. log out"
+
+    INPUT Option 
+
+    switch (Option) {
+    case "1":
+        PRINT "masukkan tugas :"
+        INPUT Tugas 
+        
+        APPEND Tugas to DaftarTugas
+    case "2":
+        IF length of DaftarTugas == 0
+            print "tidak ada tugas"
+        ELSE
+            print "berikut daftar tugas kamu"
+            FOR i = 0 ; i < length(DaftarTugas) ; i++
+                PRINT DaftarTugas[i]
+    case "3" 
+        PRINT "Anda Berhasil Log Out"
+        break
+    default :
+        PRINT "input tidak valid"
+    }
+    
+END INFINITE LOOP
+
+
